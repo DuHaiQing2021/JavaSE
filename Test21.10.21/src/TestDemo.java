@@ -5,16 +5,19 @@ public class TestDemo {
     public static void main(String[] args) {
         int count = 0;
         for(int i = 1; i <= 100; i++) {
+            int temp = i;
             while(true) {
-                if(i%10 == 9){
+                if(temp%10 == 9){
                     count++;
-                } else if(i%10 == 0){
+                }
+                if(temp%10 == 0){
                     break;
                 }
-                i/=10;
+                temp/=10;
             }
         }
         System.out.println("1到100中出现的数字9的个数："+count);
     }
 
 }
+
