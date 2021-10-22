@@ -4,14 +4,11 @@ public class TestDemo {
      */
     public static void main(String[] args) {
         int count = 0;
-        for(int i = 1; i <= 100; i++) {
-            int temp = i;
-            while(true) {
-                if(temp%10 == 9){
+        for(int i=1; i<=100; i++){
+            int temp=i;
+            while( temp % 10 != 0 || temp / 10 != 0){
+                if(temp%10==9){
                     count++;
-                }
-                if(temp%10 == 0){
-                    break;
                 }
                 temp/=10;
             }
