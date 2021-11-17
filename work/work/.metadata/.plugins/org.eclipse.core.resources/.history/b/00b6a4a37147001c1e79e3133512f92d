@@ -1,0 +1,21 @@
+package com.zretc.bookshop.impl;
+
+import com.zretc.bookshop.dao.UserDao;
+import com.zretc.bookshop.entity.UserEntity;
+
+public interface UserDaoImpl extends UserDao {
+
+	@Override
+	default UserEntity login(String userName, String userPwd) {
+		// TODO 自动生成的方法存根
+		return null;
+	}
+
+	@Override
+	default UserEntity updatePwd(UserEntity user, String userPwd1, String userPwd2) {
+		// TODO 自动生成的方法存根
+		return null;
+	}
+	
+
+}

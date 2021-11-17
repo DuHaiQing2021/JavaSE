@@ -1,0 +1,16 @@
+package com.zretc.bookshop.ui;
+
+import com.zretc.bookshop.service.UserService;
+import com.zretc.bookshop.service.impl.UserServicelmpl;
+
+//UI²ã
+public class Test {
+	
+	public static void main(String[] args) {
+		
+		
+		UserService userService =new UserServicelmpl();
+	}
+	
+
+}

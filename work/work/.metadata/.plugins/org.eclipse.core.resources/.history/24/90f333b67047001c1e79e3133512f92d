@@ -1,0 +1,5 @@
+package com.zretc.bookshop.entity;
+
+public class UserEntity {
+
+}

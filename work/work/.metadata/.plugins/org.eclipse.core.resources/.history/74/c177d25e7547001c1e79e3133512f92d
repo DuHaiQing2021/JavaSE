@@ -1,0 +1,20 @@
+package com.zretc.bookshop.service.impl;
+
+import com.zretc.bookshop.entity.UserEntity;
+import com.zretc.bookshop.service.UserService;
+
+public class UserServicelmpl implements UserService {
+
+	@Override
+	public UserEntity login(String userName, String userPwd) {
+		// TODO 自动生成的方法存根
+		return null;
+	}
+
+	@Override
+	public UserEntity updatePwd(UserEntity user, String userPwd1, String userPwd2) {
+		// TODO 自动生成的方法存根
+		return null;
+	}
+
+}

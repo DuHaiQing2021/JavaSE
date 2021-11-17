@@ -1,0 +1,12 @@
+package com.zretc.bookshop.dao;
+
+import com.zretc.bookshop.entity.UserEntity;
+
+//数据访问层中的用户相关的接口
+public interface UserDao {
+	
+	//登录
+	public abstract  UserEntity login(String userName,String userPwd);
+	//修改密码
+	public abstract UserEntity updatePwd(UserEntity user,String userPwd1,String userPwd2);
+}

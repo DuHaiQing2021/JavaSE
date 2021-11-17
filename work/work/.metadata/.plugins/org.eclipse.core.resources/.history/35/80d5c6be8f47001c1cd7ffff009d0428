@@ -1,0 +1,25 @@
+package com.zretc.bookshop.dao;
+
+import com.zretc.bookshop.entity.UserEntity;
+
+//用来初始化实体类的数据
+public class BaseDao {
+	
+	static UserEntity[] users=new UserEntity[3];
+
+	
+
+
+	static {
+		UserEntity user1=new UserEntity("D1","zs","112");
+		UserEntity user2=new UserEntity("D2","zs","112");
+		UserEntity user3=new UserEntity("D3","zs","112");
+		users[0]=user1;
+		users[1]=user2;
+		users[2]=user3;
+		
+	}
+	public static UserEntity[] getUsers() {
+		return users;
+	}
+}

@@ -1,0 +1,40 @@
+package com.zretc.bookshop.ui;
+
+import java.util.Scanner;
+
+import com.zretc.bookshop.entity.UserEntity;
+import com.zretc.bookshop.service.UserService;
+import com.zretc.bookshop.service.impl.UserServicelmpl;
+//UI层
+public class Test {
+	
+	public static void main(String[] args) {
+	
+		//创建业务逻辑层实现类的对象
+		UserService userService =new UserServicelmpl();
+		//系统执行流程：
+		Scanner sc=new Scanner(System.in);
+		while(true) {
+			System.out.println("----欢迎来到图书商城管理系统--------");
+			System.out.println("1.登录\n2.退出系统\n请选择：");
+			int num =sc.nextInt();
+			if(num==1) {
+				while(true) {
+					System.out.println();
+					String userName=sc.nextLine();
+					System.out.println();
+					String pwd=sc.nextLine();
+					
+					UserEntity user= userService.login(userName, Pwd);
+					
+				}
+				
+				
+			}
+			
+		}
+		
+	}
+	
+
+}

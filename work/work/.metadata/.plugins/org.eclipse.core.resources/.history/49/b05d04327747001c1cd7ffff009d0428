@@ -1,0 +1,11 @@
+package com.zretc.bookshop.service;
+
+import com.zretc.bookshop.entity.UserEntity;
+
+public interface UserService {
+
+	//µÇÂ¼
+	public abstract  UserEntity login(String userName,String userPwd);
+	//ĞŞ¸ÄÃÜÂë
+	public abstract UserEntity updatePwd(UserEntity user,String userPwd1,String userPwd2);
+}

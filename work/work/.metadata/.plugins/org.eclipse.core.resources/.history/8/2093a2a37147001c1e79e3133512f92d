@@ -1,0 +1,7 @@
+package com.zretc.bookshop.impl;
+
+import com.zretc.bookshop.dao.UserDao;
+
+public interface UserDaoImpl extends UserDao {
+
+}

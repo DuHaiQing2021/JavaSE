@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="com.zretc.bookshop.service.UserService"/>
+<fullyQualifiedTypeName name="com.zretc.bookshop.dao.UserDao"/>
+<fullyQualifiedTypeName name="java.util.Scanner"/>
+<fullyQualifiedTypeName name="com.zretc.bookshop.entity.UserEntity"/>
+<fullyQualifiedTypeName name="com.zretc.bookshop.dao.BaseDao"/>
+<fullyQualifiedTypeName name="com.zretc.bookshop.entity.AllBook"/>
+</qualifiedTypeNameHistroy>

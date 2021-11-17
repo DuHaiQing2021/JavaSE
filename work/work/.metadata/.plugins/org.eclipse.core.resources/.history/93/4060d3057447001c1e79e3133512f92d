@@ -1,0 +1,5 @@
+package com.zretc.bookshop.service;
+
+public interface UserService {
+
+}
