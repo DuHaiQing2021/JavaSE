@@ -113,15 +113,18 @@ public class acterLinkedList implements ILinkedList{
     }
     //删除所有值为key的节点
     public void removeAllKey(int key){
-
-        ListNode cur=this.head;
+        ListNode cur_copy=this.head;
+        ListNode cur=this.head.next;
         while (cur!=null){
-            if (this.head.val==key){
-               this.head=cur.next;
-            }else if (cur.next.val==key){
-                cur.next=cur.next.next;
+            if (cur.val==key){
+                cur_copy.next=cur.next;
+            }else {
+                cur_copy=cur;
             }
             cur=cur.next;
+        }
+        if (head.val==key){
+            head=head.next;
         }
     }
     //得到单链表的长度
@@ -144,7 +147,12 @@ public class acterLinkedList implements ILinkedList{
         System.out.println();
     }
     //清空链表
-    public void clear(){
+    public void clear() {
+        while (this.head!=null){
+            ListNode curNext=head.next;
+            this.head.next=null;
+            this.head=curNext;
+        }
 
     }
 }
