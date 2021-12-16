@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/src/com/zretc/bookshop/dao/BaseDao.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/com/zretc/bookshop/dao/UserDao.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/com/zretc/bookshop/dao/impl/UserDaoImpl.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/com/zretc/bookshop/entity/BookEntity.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/com/zretc/bookshop/entity/UserEntity.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/com/zretc/bookshop/service/UserService.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/com/zretc/bookshop/service/impl/UserServiceImpl.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/com/zretc/bookshop/ui/Test.java" charset="GBK" />
+  </component>
+</project>
