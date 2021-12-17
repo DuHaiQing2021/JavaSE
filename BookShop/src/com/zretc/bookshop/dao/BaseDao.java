@@ -17,9 +17,9 @@ public class BaseDao {
 	//初始化用户对象
 	static {
 		users.add(new UserEntity(1,"Admin","123456",1));   //默认的管理员，有且只有一个
-		users.add(new UserEntity(2,"Tom","123",0));
-		users.add(new UserEntity(3,"jack","456",0));
-		users.add(new UserEntity(4,"rose","789",0));
+		users.add(new UserEntity(2,"张三","123",0));
+		users.add(new UserEntity(3,"李四","123",0));
+		users.add(new UserEntity(4,"王五","123",0));
 		
 		books.add(new BookEntity(1,"水浒传","施耐庵",39.8));
 		books.add(new BookEntity(2,"红楼梦","曹雪芹",48.8));
