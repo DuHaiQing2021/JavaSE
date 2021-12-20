@@ -13,7 +13,7 @@ public class MaJiangTest {
 		assertEquals(1,ret);
 	}
  
-	//测试是否能正常判断没有胡牌
+	//测试是否能正常判断无法胡牌
 	@Test
 	public void testMaJiang1() {
 		MajangImpl t = new MajangImpl();
