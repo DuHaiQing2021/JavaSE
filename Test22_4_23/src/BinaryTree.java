@@ -40,4 +40,22 @@ public class BinaryTree {
         preOrder(root.left);
         preOrder(root.right);
     }
+    //中序遍历
+    public void inOrder(BTNode root){
+        if (root==null){
+            return;
+        }
+        inOrder(root.left);
+        System.out.print(root.val+" ");
+        inOrder(root.right);
+    }
+    //后续遍历
+    public void postOrder(BTNode root){
+        if (root==null){
+            return;
+        }
+        postOrder(root.left);
+        postOrder(root.right);
+        System.out.print(root.val+" ");
+    }
 }
