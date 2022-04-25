@@ -29,11 +29,34 @@ public class TestDemo {
         int d=binrayTree.getLeafNodeCount1(root);
         System.out.println(d);
         System.out.println("============第K层结点的个数==============");
-        int e=binrayTree.getKLevelNodeCount(root,3);
-        System.out.println(e);
+//        int e=binrayTree.getKLevelNodeCount(root,3);
+//        System.out.println(e);
         System.out.println("============求树的高度===================");
         int f=binrayTree.getHeight(root);
         System.out.println(f);
+
+        try{
+            BTNode ret=binrayTree.find(root,'C');
+            System.out.println(ret.val);
+        }catch (NullPointerException e){
+            e.printStackTrace();
+            System.out.println("这个结点不存在");
+        }
+
+        System.out.println("========判断是否是完全二叉树=============");
+        boolean flg=binrayTree.isCompleteTree(root);
+        System.out.println(flg);
+
+        System.out.println("========判断是否是相同的树===============");
+        BTNode root2=binrayTree.createTree2();
+//        boolean ret=binrayTree.isSameTree(root,root2);
+//        System.out.println(ret);
+
+        System.out.println("========判断是否是子树===============");
+        boolean flg2=binrayTree.isSubtree(root,root2);
+        System.out.println(flg2);
+
+        System.out.println();
     }
 
 }

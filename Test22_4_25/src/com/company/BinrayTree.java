@@ -12,7 +12,6 @@ class BTNode{
         this.val=val;
     }
 }
-
 public class BinrayTree {
 
     public BTNode createTree(){
@@ -31,32 +30,12 @@ public class BinrayTree {
         B.right=E;
         C.left=F;
         C.right=G;
-//        E.right=H;
+        E.right=H;
 
         return A;//树根结点
 
     }
-    public BTNode createTree2(){
-        BTNode A=new BTNode('A');
-        BTNode B=new BTNode('B');
-        BTNode C=new BTNode('C');
-        BTNode D=new BTNode('D');
-        BTNode E=new BTNode('E');
-        BTNode F=new BTNode('F');
-        BTNode G=new BTNode('G');
-        BTNode H=new BTNode('H');
 
-        A.left=B;
-        A.right=C;
-        B.left=D;
-        B.right=E;
-        C.left=F;
-        C.right=G;
-//        E.right=H;
-
-        return A;//树根结点
-
-    }
     //前序遍历
     public void preOrder(BTNode root){
         if (root==null){
@@ -154,7 +133,16 @@ public class BinrayTree {
         return getKLevelNodeCount(root.left,k-1)+getKLevelNodeCount(root.right,k-1);
     }
 
+    //求整棵树的高度
+    public int getHeight(BTNode root){
+        if (root==null){
+            return 0;
+        }
+        int leftHeight=getHeight(root.left);
+        int rightHeight=getHeight(root.right);
+        return leftHeight > rightHeight ? leftHeight+1:rightHeight+1;
 
+    }
     //求整棵树的高度2
     public int getHeight2(BTNode root){
         if (root==null){
@@ -227,62 +215,19 @@ public class BinrayTree {
         }
         return true;
     }
-
-    //判断是否是相同的二叉树
-    public boolean isSameTree(BTNode p, BTNode q) {
-        //递归先判递归结束的条件，不能先去判断两个元素相同的结束条件，不然无法递归下去。
-        if (p!=null&&q==null||p==null&&q!=null){
+    public boolean isSameTree(TreeNode p, TreeNode q) {
+        if(p!=null&&q!=null){
+            if(p.val==q.val){
+                return true;
+            }else{
+                return false;
+            }
+        }else if(p==null && q==null){
+            return ture;
+        }else{
             return false;
         }
-        if (p==null&&q==null){
-            return true;
-        }
-        if (p.val!=q.val){
-            return  false;
-        }
+
         return isSameTree(p.left,q.left)&&isSameTree(p.right,q.right);
-    }
-    //判断是否是子树
-    public boolean isSubtree(BTNode root, BTNode subRoot) {
-        if (root==null){
-            return  false;
-        }
-        if (isSameTree(root,subRoot)){
-            return  true;
-        }
-        if (isSubtree(root.left,subRoot)){
-            return true;
-        }
-        if (isSubtree(root.right,subRoot)){
-            return true;
-        }
-        return false;
-    }
-
-    //求整棵树的高度
-    public int getHeight(BTNode root){
-        if (root==null){
-            return 0;
-        }
-        int leftHeight=getHeight(root.left);
-        int rightHeight=getHeight(root.right);
-        return leftHeight > rightHeight ? leftHeight+1:rightHeight+1;
-
-    }
-    //求是否是平衡二叉树
-    public boolean isBalanced(BTNode root){
-        if (root==null) return  true;
-        int left=getHeight(root.left);
-        int right=getHeight(root.right);
-        return Math.abs(left-right)<=1 && isBalanced(root.left) &&isBalanced(root.right);
-    }
-    public boolean isBalanced2(BTNode root){
-        if (root==null){
-            return false;
-        }
-        boolean leftHeight=isBalanced2(root.left);
-        boolean rightHeight=isBalanced2(root.right);
-        return l
-
     }
 }
