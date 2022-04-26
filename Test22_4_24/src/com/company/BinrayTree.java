@@ -1,6 +1,8 @@
 package com.company;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Queue;
 
 class BTNode{
@@ -31,7 +33,7 @@ public class BinrayTree {
         B.right=E;
         C.left=F;
         C.right=G;
-//        E.right=H;
+        E.right=H;
 
         return A;//树根结点
 
@@ -52,7 +54,7 @@ public class BinrayTree {
         B.right=E;
         C.left=F;
         C.right=G;
-//        E.right=H;
+        E.right=H;
 
         return A;//树根结点
 
@@ -260,6 +262,7 @@ public class BinrayTree {
     }
 
     //求整棵树的高度
+    //时间复杂度O（n）
     public int getHeight(BTNode root){
         if (root==null){
             return 0;
@@ -270,19 +273,99 @@ public class BinrayTree {
 
     }
     //求是否是平衡二叉树
+    //时间复杂度O（n^2）
     public boolean isBalanced(BTNode root){
         if (root==null) return  true;
         int left=getHeight(root.left);
         int right=getHeight(root.right);
         return Math.abs(left-right)<=1 && isBalanced(root.left) &&isBalanced(root.right);
     }
-    public boolean isBalanced2(BTNode root){
+    //求是否是平衡二叉树2
+    //时间复杂度O（n）
+    public int isBalancedTreeHeight(BTNode root){
         if (root==null){
+            return 0;
+        }
+        int leftHeight=isBalancedTreeHeight(root.left);
+        int rightHeight=isBalancedTreeHeight(root.right);
+        if(leftHeight >= 0&&rightHeight >= 0&& Math.abs(leftHeight-rightHeight)<=1){
+            //平衡时左子树和右子树的结点个数
+            return Math.max(leftHeight+1,rightHeight+1);
+        }else{
+            //不平衡
+            return -1;
+        }
+    }
+    public boolean isBalanced2(BTNode root){
+        if (root==null) return true;
+        return isBalancedTreeHeight(root) >= 0;
+    }
+
+    //判断对称
+    public boolean isS(BTNode left,BTNode right){
+
+        if (left!=null&&right==null||left==null&&right!=null){
             return false;
         }
-        boolean leftHeight=isBalanced2(root.left);
-        boolean rightHeight=isBalanced2(root.right);
-        return l
+        if (left==null&&right==null){
+            return true;
+        }
+        if (left.val!=right.val){
+            return false;
+        }
+        return isS(left.left,right.right) && isS(left.right,right.left);
 
+    }
+    //判断是否是对称二叉树
+    public boolean isSymmetric(BTNode root) {
+        if (root==null) return true;
+        return isS(root.left,root.right);
+    }
+
+
+
+    //层次遍历
+    public void levelOrder(BTNode root){
+        if (root==null) return;
+        Queue<BTNode> queue=new LinkedList<>();
+        queue.add(root);
+        while(!queue.isEmpty()){
+            BTNode ret=queue.poll();
+            System.out.print(ret.val+" ");
+            if (ret.left!=null){
+                queue.add(ret.left);
+            }
+            if (ret.right!=null){
+                queue.add(ret.right);
+            }
+        }
+    }
+    //层次遍历2
+    public List<List<Character>> levelOrder2(BTNode root) {
+        //将二叉树每次元素依次存放在二维顺序表中
+        List<List<Character>> ret = new ArrayList<>();
+        //使用队列来遍历存放二叉树的值
+        Queue<BTNode> queue = new LinkedList<>();
+
+        queue.offer(root);
+        while (!queue.isEmpty()) {
+            int size = queue.size();
+            List<Character> list = new ArrayList<>();
+            //将每层元素进行遍历
+            while (size != 0) {
+                BTNode cur = queue.poll();
+                list.add(cur.val);
+                if (cur.left != null) {
+                    queue.add(cur.left);
+                }
+                if (cur.right != null) {
+                    queue.add(cur.right);
+                }
+                size--;
+            }
+            //把一维顺序表存放到二维顺序表中
+            ret.add(list);
+        }
+        return ret;
     }
 }

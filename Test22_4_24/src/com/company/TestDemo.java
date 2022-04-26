@@ -1,6 +1,8 @@
 package com.company;
 
 
+import java.util.List;
+
 public class TestDemo {
     public static void main(String[] args) {
         BinrayTree binrayTree=new BinrayTree();
@@ -55,8 +57,23 @@ public class TestDemo {
         System.out.println("========判断是否是子树===============");
         boolean flg2=binrayTree.isSubtree(root,root2);
         System.out.println(flg2);
-
+        System.out.println("========判断是平衡二叉树===============");
+        boolean flg3=binrayTree.isBalanced(root2);
+        int flg3_int=binrayTree.isBalancedTreeHeight(root2);
+        System.out.println(flg3);
+        System.out.println(flg3_int);
         System.out.println();
+
+        System.out.println("========判断是对称二叉树===============");
+        boolean flg4=binrayTree.isSymmetric(root);
+        boolean flg5=binrayTree.isSymmetric(root2);
+        System.out.println(flg4);
+        System.out.println(flg5);
+
+        binrayTree.levelOrder(root);
+        System.out.println();
+        List<List<Character>> list =binrayTree.levelOrder2(root);
+        System.out.println(list);
     }
 
 }
